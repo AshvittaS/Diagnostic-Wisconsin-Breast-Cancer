@@ -71,17 +71,26 @@ pip install -r requirements.txt
 ```
 
 ### Dependencies
-- pandas==2.0.3
-- numpy==1.24.3
-- matplotlib==3.7.2
-- seaborn==0.12.2
-- scikit-learn==1.3.0
-- plotly==5.15.0
-- gradio==3.50.2
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- plotly
+- gradio
 
 ## 🚀 **Usage**
 
-### Running the Web Application
+### 🌐 **Live Demo**
+**Try the application online**: [Breast Cancer Predictor](https://ashvitta07-breast-cancer-classification.hf.space/?logs=container&__theme=system&deep_link=Lwbhu7kdJSM)
+
+The deployed application allows you to:
+- Enter tumor features through an intuitive interface
+- Get instant predictions (Malignant/Benign)
+- View confidence scores for each prediction
+- Share results via direct links
+
+### Running Locally
 ```bash
 python app.py
 ```
@@ -114,7 +123,8 @@ Open `task.ipynb` to explore the complete analysis pipeline including:
 2. **Advanced Preprocessing**: Sophisticated handling of skewed data with log transformation
 3. **Interactive Visualizations**: Plotly-based 3D scatter matrix for PCA exploration
 4. **Production Deployment**: Complete web application with model serialization
-5. **Comprehensive Analysis**: End-to-end pipeline from raw data to deployed application
+5. **Cloud Deployment**: Successfully deployed on Hugging Face Spaces for global access
+6. **Comprehensive Analysis**: End-to-end pipeline from raw data to deployed application
 
 ## 📈 **Performance Metrics**
 
