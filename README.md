@@ -2,52 +2,53 @@
 
 A comprehensive machine learning pipeline for breast cancer diagnosis using the Wisconsin Diagnostic Breast Cancer dataset. This project features advanced data preprocessing, dimensionality reduction, and an interactive web application for real-time predictions.
 
-## 🚀 Unique Features & Innovations
+## 🚀 Features
 
-### 🔬 **Advanced Feature Engineering**
-- **Intelligent Correlation-Based Feature Selection**: Automatically removes highly correlated features (>90% correlation) to prevent multicollinearity
-- **Log Transformation for Skewed Data**: Applied log transformation to handle skewed distributions, ensuring better model performance
-- **Comprehensive Data Preprocessing**: Handles negative values and zero values before log transformation
+- **Advanced Feature Engineering**: Intelligent correlation-based feature selection, log transformation for skewed data, and comprehensive preprocessing.
+- **Dimensionality Reduction**: PCA with optimal component selection and interactive visualizations.
+- **High-Performance Model**: 99.1% accuracy with balanced classification and confidence scoring.
+- **Interactive Web App**: Gradio-based interface for real-time tumor classification.
 
-### 📊 **Dimensionality Reduction with PCA**
-- **Optimal Component Selection**: Uses 6 principal components that capture maximum variance
-- **Interactive PCA Visualization**: Plotly-based scatter matrix showing component relationships
-- **Feature Importance Mapping**: Heatmap visualization showing how original features contribute to each principal component
+## 🐳 How to Execute Using Docker
 
-### 🎯 **High-Performance Model**
-- **99.1% Accuracy**: Achieved exceptional performance on test data
-- **Balanced Classification**: Excellent precision and recall for both malignant and benign cases
-- **Confidence Scoring**: Provides prediction confidence levels for better clinical decision-making
+### Prerequisites
+- Docker installed on your system
 
-### 🌐 **Interactive Web Application**
-- **Real-time Predictions**: Gradio-based web interface for instant tumor classification
-- **User-Friendly Input**: Simple form interface for medical professionals
-- **Production-Ready**: Deployed with proper model serialization and loading
+### Build the Docker Image
+Run the following command in the project directory to build the Docker image:
 
-## 📈 **Key Visualizations & Insights**
+```bash
+docker build -t breast_cancer .
+```
 
-### Correlation Analysis
-The project includes a comprehensive correlation heatmap that reveals:
-- Strong correlations between related features (mean, SE, worst values)
-- Identified redundant features for removal
-- Feature relationships that guide preprocessing decisions
+### Run the Application
+After building the image, start the container:
 
-### Distribution Analysis
-- **Box Plot Analysis**: Identified outliers and data distribution patterns
-- **KDE Plots**: Visualized feature distributions to understand data characteristics
-- **Skewness Detection**: Automated identification of skewed features requiring transformation
+```bash
+docker run -p 7860:7860 breast_cancer
+```
 
-### PCA Visualization
-- **Explained Variance Plot**: Shows cumulative variance explained by each component
-- **Interactive Scatter Matrix**: 3D visualization of principal components with color-coded diagnosis
-- **Feature Contribution Heatmap**: Shows how original features load onto principal components
+The application will be available at `http://localhost:7860` in your web browser.
 
-## 🛠️ **Technical Architecture**
+### Stopping the Container
+To stop the running container, use `Ctrl+C` in the terminal or run:
 
-### Data Pipeline
-1. **Data Loading**: Direct from UCI ML Repository
-2. **Preprocessing**: 
-   - Ordinal encoding (M=1, B=0)
+```bash
+docker stop <container_id>
+```
+
+## 📊 Project Insights
+
+- **Correlation Analysis**: Heatmap revealing feature relationships and redundant features.
+- **Distribution Analysis**: Box plots, KDE plots, and skewness detection.
+- **PCA Visualization**: Explained variance plots, interactive scatter matrices, and feature contribution heatmaps.
+
+## 🛠️ Technical Stack
+
+- **Python Libraries**: pandas, numpy, matplotlib, seaborn, scikit-learn, plotly, gradio
+- **Machine Learning**: PCA, classification models
+- **Web Framework**: Gradio for interactive UI
+- **Containerization**: Docker for easy deployment
    - Correlation-based feature removal
    - Log transformation for skewed features
 3. **Scaling**: StandardScaler for normalization
